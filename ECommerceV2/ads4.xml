@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  
+  <Ad>
+    <ImageUrl>Images/ad4.jpg</ImageUrl>
+    <NavigateUrl>http://www.babybouquets.com.au</NavigateUrl>
+    <AlternateText>Ưu đãi khi đặt trước đồng hồ thông minh Garmin Vernu 2 Series</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>smartwatch</Keyword>
+  </Ad>
+</Advertisements>

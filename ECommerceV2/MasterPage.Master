@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="ECommerceV2.MasterPage" %>
+
+<%@ Register Assembly="DevExpress.Web.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link type="text/css" href="StyleHotline.css" rel="stylesheet" />
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        #list2 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #7affd9;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .menu:hover {
+            background-color: #d6d4d0;
+        }
+
+        .active2 {
+            background-color: white;
+        }
+
+        .item:hover {
+            background-color: #48dbb2;
+        }
+    </style>
+    <script>
+        function goHome() {
+            window.location.href = "Default.aspx";
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width: 1000px; margin: 0 auto;">
+            <ul id="list">
+                <li>
+                    <img style="margin-left: 30px; margin-right: 40px" alt="Logo" src="./Images/shoplogo.png" onclick="goHome()" /></li>
+                <li><a class="menu" href="Default.aspx">Home</a></li>
+                <li><a class="menu" href="News.aspx">News</a></li>
+                <li style="float: right">
+                    <dx:ASPxButton ID="btnLogout" runat="server" Text="Logout" Height="42px" Theme="MaterialCompact" OnClick="btnLogout_Click"></dx:ASPxButton>
+                </li>
+                <li style="float: right">
+                    <dx:ASPxButton ID="btnLogin" runat="server" Text="Login" Height="42px" Theme="MaterialCompact" OnClick="btnLogin_Click"></dx:ASPxButton>
+                </li>
+
+                <li style="float: right; margin-right: 10px; padding-top: 12px">
+
+                    <asp:Label ID="lblPhone" runat="server" Text="Phone Number"></asp:Label>
+
+                    <dx:ASPxPopupMenu ID="ASPxPopupMenu1" runat="server" DataSourceID="ASPxSiteMapDataSource1" PopupElementID="lblPhone" Target="_self">
+                        <Items>
+                            <dx:MenuItem NavigateUrl="~/UpdateInfo.aspx" Text="Update account infomation">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="View order history">
+                            </dx:MenuItem>
+                        </Items>
+                    </dx:ASPxPopupMenu>
+                    <dx:ASPxSiteMapDataSource ID="ASPxSiteMapDataSource1" runat="server" SiteMapFileName="~/web2.sitemap" />
+
+                </li>
+
+                <li><a class="menu" href="Register.aspx">Register</a></li>
+                <li><a class="menu" href="OrderHistory.aspx">Order History</a></li>
+                <li>
+                    <dx:ASPxTextBox Style="margin-top: 12px; margin-left: 20px" ID="txtSearch" runat="server" Width="170px" Theme="MaterialCompact"></dx:ASPxTextBox>
+                </li>
+                <li>
+                    <asp:ImageButton Style="margin-top: 13px; margin-left: 15px" ID="ibtnSearch" runat="server" Height="30px" ImageUrl="~/Images/search.png" Width="30px" OnClick="ibtnSearch_Click" />
+                </li>
+                <li>
+                    <asp:ImageButton Style="margin-top: 13px; margin-left: 30px" ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/shopping-bag .png" Width="30px" OnClick="ImageButton2_Click" />
+                </li>
+            </ul>
+        </div>
+        <div style="width: 1000px; margin: 0 auto;">
+            <ul id="list2">
+                <li><a class="item" href="Smartphone.aspx">Điện thoại</a></li>
+                <li><a class="item" href="Laptop.aspx">Laptop</a></li>
+                <li><a class="item" href="Tablet.aspx">Tablet</a></li>
+                <li><a class="item" href="Accessories.aspx">Phụ kiện</a></li>
+                <li><a class="item" href="Smartwatch.aspx">Đồng hồ thông minh</a></li>
+                <li><a class="item" href="Watch.aspx">Đồng hồ thời trang</a></li>
+                <li><a class="item" href="PC.aspx">PC & Máy in</a></li>
+            </ul>
+        </div>
+        <div style="width: 800px; margin: 0 auto;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="hotline-phone-ring-wrap">
+            <div class="hotline-phone-ring">
+                <div class="hotline-phone-ring-circle"></div>
+                <div class="hotline-phone-ring-circle-fill"></div>
+                <div class="hotline-phone-ring-img-circle"><a href="tel:0362720346" class="pps-btn-img">
+                    <img src="https://netweb.vn/img/hotline/icon.png" alt="so dien thoai" width="50" />
+                </a></div>
+            </div>
+            <div class="hotline-bar">
+                <a href="tel:0362720346"><span class="text-hotline">036 272 0346</span> </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="float-icon-hotline">
+            <ul class="left-icon hotline">
+                <li class="hotline_float_icon"><a target="_blank" rel="nofollow" id="messengerButton" href="https://zalo.me/0362720346"><i class="fa fa-zalo animated infinite tada"></i><span>Zalo</span></a></li>
+                <li class="hotline_float_icon"><a target="_blank" rel="nofollow" id="messengerButton" href="https://www.facebook.com/buivanmanh01655/"><i class="fa fa-messenger animated infinite tada"></i><span>Facebook</span></a></li>
+            </ul>
+        </div>
+        <div>
+
+            <table class="dx-justification">
+                <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Thông tin liên hệ"></asp:Label>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Hotline:</td>
+                    <td>0909997722</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Facebook:</td>
+                    <td>fb.com/ecommerce</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>ecommerce@gmail.com</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+<script>
+    var list = document.getElementById("list2");
+    var items = list.getElementsByClassName("item");
+    for (var i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active2");
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active2", "");
+            }
+            this.className += " active2";
+        });
+    }
+</script>
+</html>
